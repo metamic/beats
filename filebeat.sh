@@ -2,6 +2,7 @@
 
 if [ -z "$1" ] && [ -z "$2" ]; then
     echo "Usage: ./filebeat.sh <container name> <log path>"
+    exit
 fi
 
 source .env
