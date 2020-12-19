@@ -1,0 +1,14 @@
+version: "3.2"
+
+services:
+  filebeat:
+    container_name: $CONTAINER_NAME
+    build:
+      context: ${PWD}
+      dockerfile: filebeat.Dockerfile
+      args:
+        VERSION: $FILEBEAT_VERSION
+    volumes:
+      - type: bind
+        source: $LOG_PATH
+        target: /tmp

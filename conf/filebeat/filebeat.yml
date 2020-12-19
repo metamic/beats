@@ -1,0 +1,9 @@
+filebeat.inputs:
+  - type: log
+    enabled: true
+    paths:
+      - "/tmp/*"
+
+output.logstash:
+  hosts: ["$HOST"]
+  enabled: true
