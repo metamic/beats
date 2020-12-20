@@ -14,12 +14,9 @@ git clone https://github.com/metamic/beats.git
 cd beats
 ```
 
-second, change your login password in .env
-
+second, change your host
 ```
-HOST=172.30.1.11:5044
-ELASTICSEARCH_PASSWORD=mypassword <<< here
-
+HOST=<YOUR HOST>:5044
 FILEBEAT_VERSION=7.10.1 
 ```
 
