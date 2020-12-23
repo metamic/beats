@@ -23,7 +23,7 @@ else
     echo "$1 name already exists"
 fi
 
-sed -i "s/\$HOST/$HOST/g" $PWD/$1/filebeat.yml
+sed -i "s/\$HOST/$LOGSTASH_HOST/g" $PWD/$1/filebeat.yml
 sed -i "s/\$CONTAINER_NAME/$CONTAINER_NAME/g" $PWD/$1/docker-compose.yml
 sed -i "s/\$FILEBEAT_VERSION/$FILEBEAT_VERSION/g" $PWD/$1/docker-compose.yml
 sed -i "s#\$LOG_PATH#$LOG_PATH#g" $PWD/$1/docker-compose.yml
