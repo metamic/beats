@@ -2,7 +2,7 @@
 
 if [ -z "$1" ] && [ -z "$2" ]; then
     echo "Usage: ./filebeat.sh <container name> <log path>"
-    exit
+    exit 1
 fi
 
 source .env
@@ -22,5 +22,5 @@ sed -i "s/\$FILEBEAT_VERSION/$FILEBEAT_VERSION/g" $PWD/$1/docker-compose.yml
 sed -i "s#\$LOG_PATH#$LOG_PATH#g" $PWD/$1/docker-compose.yml
 
 cd $1
-docker-compose up --build --detach
+docker-compose up --build -d
 cd ..
