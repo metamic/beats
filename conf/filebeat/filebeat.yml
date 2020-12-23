@@ -7,3 +7,6 @@ filebeat.inputs:
 output.logstash:
   hosts: ["$HOST"]
   enabled: true
+  # ssl.certificate_authorities: ["/cert/ca.crt"]
+  # ssl.certificate: "/cert/filebeat.crt"
+  # ssl.key: "/cert/filebeat.key"

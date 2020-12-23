@@ -12,3 +12,6 @@ services:
       - type: bind
         source: $LOG_PATH
         target: /tmp
+      - type: bind
+        source: ${PWD}/cert
+        target: /cert
