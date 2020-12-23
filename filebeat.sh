@@ -5,7 +5,14 @@ if [ -z "$1" ] && [ -z "$2" ]; then
     exit 1
 fi
 
+
 source .env
+
+if [ -z "$LOGSTASH_HOST" ]; then
+    echo "set LOGSTASH_HOST ENV VARIABLE ex) export LOGSTASH_HOST=<YOUR HOST>"
+    exit 1
+fi
+
 
 CONTAINER_NAME=$1
 LOG_PATH=$2
