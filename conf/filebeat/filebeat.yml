@@ -3,6 +3,7 @@ filebeat.inputs:
     enabled: true
     paths:
       - "/tmp/*"
+    exclude_files: ['\.gz$']  # ignore gz files
 
 output.logstash:
   hosts: ["$HOST"]
